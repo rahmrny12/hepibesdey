@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Greeting Card</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #fff0f5, #e0ffff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .flowers {
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .flower {
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #ff69b4 40%, #ff1493);
+      border-radius: 50%;
+      position: relative;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .flower::before, .flower::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #ff69b4 40%, #ff1493);
+      border-radius: 50%;
+    }
+
+    .flower::before {
+      transform: rotate(45deg);
+    }
+
+    .flower::after {
+      transform: rotate(-45deg);
+    }
+
+    .greeting-card {
+      background: #fff8f0;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .greeting-card h1 {
+      font-size: 2em;
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    .greeting-card p {
+      font-size: 1.1em;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    <!-- Left Flowers -->
+    <div class="flowers">
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+    </div>
+
+    <!-- Greeting Card -->
+    <div class="greeting-card">
+      <h1>Happy Birthday!</h1>
+      <p>
+        Wishing you a day filled with love, laughter, and unforgettable moments. May your heart be filled with happiness today and always.
+      </p>
+    </div>
+
+    <!-- Right Flowers -->
+    <div class="flowers">
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+    </div>
+  </div>
+
+</body>
+</html>
